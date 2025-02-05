@@ -120,16 +120,23 @@ $result = $stmt->get_result();
 </h3>
 
 
-                <?php
-                $classe_id = $row['classe_id'];
-                $sql_disciplinas = "SELECT cd.id_disciplina, d.nome_disciplina FROM classe_disciplina cd
-                                    JOIN disciplina d ON cd.id_disciplina = d.id
-                                    WHERE cd.id_classe = ?";
-                $stmt_disciplinas = $mysqli->prepare($sql_disciplinas);
-                $stmt_disciplinas->bind_param("i", $classe_id);
-                $stmt_disciplinas->execute();
-                $result_disciplinas = $stmt_disciplinas->get_result();
-                ?>
+
+
+
+
+<?php
+$curso_id = $row['curso_id'];
+$classe_id = $row['classe_id']; // Adicionado classe_id
+
+$sql_disciplinas = "SELECT ccd.disciplina_id, d.nome_disciplina 
+                    FROM classe_curso_disciplina ccd
+                    JOIN disciplina d ON ccd.disciplina_id = d.id
+                    WHERE ccd.curso_id = ? AND ccd.classe_id = ?"; // Filtro por curso e classe
+$stmt_disciplinas = $mysqli->prepare($sql_disciplinas);
+$stmt_disciplinas->bind_param("ii", $curso_id, $classe_id); // Bind dos dois parâmetros
+$stmt_disciplinas->execute();
+$result_disciplinas = $stmt_disciplinas->get_result();
+?>
 
                 <div class="table-container">
                     <table class="table table-striped table-bordered">
@@ -159,7 +166,7 @@ $result = $stmt->get_result();
                         <tbody>
                             <?php while ($disciplina = $result_disciplinas->fetch_assoc()): ?>
                                 <?php
-                                $disciplina_id = $disciplina['id_disciplina'];
+                                $disciplina_id = $disciplina['disciplina_id'];
                                 $disciplina_nome = htmlspecialchars($disciplina['nome_disciplina']);
 
                                 $sql_notas = "SELECT * FROM nota WHERE id_aluno = ? AND disciplina_id = ?";
@@ -232,35 +239,6 @@ $(document).ready(function() {
 
 
 
-<footer class="bg-dark text-white py-4">
-    <div class="container">
-        <div class="row">
-            <!-- Sobre -->
-            <div class="col-md-4 mb-3">
-                <h5>Email</h5>
-                <p><i class="bi bi-envelope-fill me-1"></i>Email: ceitajosenasio19@gmail.com</p>
-            </div>
-            <!-- Links Úteis -->
-            <div class="col-md-4 mb-3">
-                <h5>Telefone</h5>
-                <ul class="list-unstyled">
-            
-                <p><i class="bi bi-telephone-fill me-1"></i>Telefone: (+239) 997-1781</p>
-                </ul>
-            </div>
-            <!-- Contato -->
-            <div class="col-md-4 mb-3">
-                <h5>Endereço</h5>
-                <p><i class="bi bi-geo-alt-fill me-1"></i>Endereço: Marginal </p>
-                
-               
-            </div>
-        </div>
-        <div class="text-center border-top pt-3 mt-1">
-            <p class="mb-0">© 2025 DESTP. Todos os direitos reservados.</p>
-        </div>
-    </div>
-</footer>
 
 </body>
 </html>
