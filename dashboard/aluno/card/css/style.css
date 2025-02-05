@@ -1,0 +1,137 @@
+
+    .dashboard-content {
+  padding: 20px;
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 220px;
+  padding: 20px;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.blue { background-color: #2962ff; }
+.card.orange { background-color: #ff6d00; }
+.card.green { background-color: #2e7d32; }
+.card.red { background-color: #d50000; }
+.card.purple { background-color: #7b1fa2; }
+
+.table-card {
+  flex: 1;
+  margin-top: 20px;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.styled-table thead tr {
+  background-color: #263043;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: #1d2634;
+}
+
+.status.completed {
+  color: #2e7d32;
+}
+
+.status.pending {
+  color: #ff6d00;
+}
+
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.chart-card {
+  flex: 1 1 300px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #263043;
+  color: #ffffff;
+}
+
+
+
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.styled-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+.styled-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.styled-table tr:hover {
+    background-color: black;
+}
+
+
+.table-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+        background-color: #f4f4f9;
+        color: #333;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .highlight {
+        color: #2962ff;
+    }
+
+    .count {
+        font-weight: bold;
+        padding: 0 5px;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1.1em;
+    }
+    
+    .total {
+        background-color: #2962ff;
+    }
+    
+    .masculino {
+        background-color: #00c3ff;
+    }
+    
+    .feminino {
+        background-color: #ff00d4;
+    }
+
+ 

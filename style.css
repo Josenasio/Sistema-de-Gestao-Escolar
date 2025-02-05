@@ -1,0 +1,185 @@
+/* Estilo geral para o contêiner dos inputs */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #ffffff38;
+}
+
+/* Estilo para os labels */
+label {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+/* Estilo base para inputs e select */
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+
+/* Estilo de foco para inputs e select */
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Efeito de preenchimento para inputs com valor */
+input[type="text"]:valid,
+input[type="number"]:valid,
+select:valid {
+  border-color: #00ff3c;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
+}
+
+/* Efeito hover */
+input[type="text"]:hover,
+input[type="number"]:hover,
+select:hover {
+  border-color: #007bff;
+}
+
+/* Estilo especifico para o select */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='gray' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
+}
+
+/* Pequena animaçao para transiçao entre os estados */
+@keyframes inputHighlight {
+  from {
+      background-color: #f0f9ff;
+  }
+  to {
+      background-color: transparent;
+  }
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  animation: inputHighlight 0.5s ease-in-out;
+}
+
+/* Para dispositivos móveis */
+@media (max-width: 600px) {
+  form {
+      padding: 15px;
+  }
+  label {
+      font-size: 14px;
+  }
+  input[type="text"],
+  input[type="number"],
+  select {
+      font-size: 14px;
+      padding: 8px; 
+      
+      
+      
+      color: rgba(54, 252, 4, 0.623);
+  }
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.filter-container {
+  margin: 20px;
+}
+
+.filter-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group select,
+.form-group input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  color: rgb(0, 247, 255);
+}
+
+.form-group button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+  background-color: #45a049;
+}

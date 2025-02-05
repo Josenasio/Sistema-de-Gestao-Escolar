@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilizando o loader */
+    #loader {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        visibility: hidden; /* Escondido por padrão */
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s;
+    }
+    
+    /* Criando um spinner animado */
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #3498db;
+        border-top: 5px solid transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    
+    /* Animação do spinner girando */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    </style>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    
+ 
+    
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Captura todos os links da página
+    let links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault(); // Impede a navegação imediata
+            let destino = this.href; // Obtém o destino do link
+
+            // Exibe o loader
+            let loader = document.getElementById("loader");
+            loader.style.visibility = "visible";
+            loader.style.opacity = "1";
+
+            // Aguarda a animação antes de mudar a página
+            setTimeout(() => {
+                window.location.href = destino; // Redireciona após 1 segundo
+            }, 1000);
+        });
+    });
+});
+</script>
+
+</body>
+</html>
