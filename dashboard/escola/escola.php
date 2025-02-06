@@ -82,7 +82,7 @@ $result = $mysqli->query($sql);
             <table class="styled-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th >ID</th>
                         <th>Nome</th>
                         <th>Telefone</th>
                         <th>Email</th>
@@ -98,14 +98,14 @@ $result = $mysqli->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-                            echo "<td>" . htmlspecialchars($row['nome']) . "</td>";
-                            echo "<td>" . htmlspecialchars($row['telefone'] ?? '') . "</td>";
-                            echo "<td>" . htmlspecialchars($row['email'] ?? '') . "</td>";
-                            echo "<td>" . htmlspecialchars($row['codigo'] ?? '') . "</td>";
-                            echo "<td>" . htmlspecialchars($row['localizacao'] ?? '') . "</td>";
-                            echo "<td>" . htmlspecialchars($row['endereco'] ?? '') . "</td>";
-                            echo "<td>" . htmlspecialchars($row['nome_distrito']) . "</td>";
+                            echo "<td style='color:#ffffff'>" . htmlspecialchars($row['id']) . "</td>";
+                            echo "<td style='color:#ffffff'>" . htmlspecialchars($row['nome']) . "</td>";
+                            echo "<td style='color:#ffffff'>" . htmlspecialchars($row['telefone'] ?? '') . "</td>";
+                            echo "<td style='color:#ffffff'>" . htmlspecialchars($row['email'] ?? '') . "</td>";
+                            echo "<td style='color:#ffffff'>" . htmlspecialchars($row['codigo'] ?? '') . "</td>";
+                            echo "<td style='color:#ffffff'>" . htmlspecialchars($row['localizacao'] ?? '') . "</td>";
+                            echo "<td style='color:#ffffff'>" . htmlspecialchars($row['endereco'] ?? '') . "</td>";
+                            echo "<td style='color:#ffffff'>" . htmlspecialchars($row['nome_distrito']) . "</td>";
                             echo "</tr>";
                         }
                     } else {

@@ -780,7 +780,7 @@ $stmt->close();
                              
                 
                                 <th scope="col"><i class="fas fa-home"></i> Endereço</th>
-                                <th scope="col" width="50"><i class="fas fa-redo"></i> Repetente</th>
+                                <th scope="col" width="50"><i class="fas fa-redo"></i> Repitente</th>
                                 <th scope="col"><i class="fas fa-phone"></i> Cont. Encarregado</th>
                                 <th scope="col"><i class="fas fa-tools"></i> Ações</th>
                             </tr>

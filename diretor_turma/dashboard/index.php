@@ -266,7 +266,7 @@ $stmt_classe->close();
         
 
 
-        <nav class="navbar navbar-expand px-4 py-3">
+        <nav class="navbar navbar-expand px-4 py-3" style="background-color: #0C2237;">
     <div class="navbar-collapse collapse">
         <ul class="navbar-nav ms-auto">
         
@@ -289,7 +289,10 @@ $stmt_classe->close();
             <main class="content px-3 py-4">
                 <div class="container-fluid">
                     <div class="mb-3">
-                        <h3 class="fw-bold fs-4 mb-3">Painel de Administração</h3>
+                    <h3 class="fw-bold fs-4 mb-3">
+    <i class="fas fa-cogs me-2"></i> Painel de Administração
+</h3>
+
 
 
 
@@ -297,11 +300,11 @@ $stmt_classe->close();
     <!-- Card 1: Total de Alunos -->
     <div class="col-12 col-md-4 mb-4">
         <div class="card border-0 shadow-sm rounded">
-            <div class="card-body py-4" style="background-color: #f5f5f5;">
+            <div class="card-body py-4" style="background-color: #0C2237; border-radius:5px">
                 <h5 class="mb-2 text-primary fw-bold">
                 <img src="../../direcao_escola/imagem/graduated.png" alt="Descrição do ícone" width="35"> Total de Alunos
                 </h5>
-                <p class="mb-2 text-dark fw-bold">
+                <p class="mb-2 fw-bold" style="color: #ffffff;">
                     <?= $total ?>
                 </p>
             </div>
@@ -312,11 +315,11 @@ $stmt_classe->close();
     <div class="col-12 col-md-4 mb-4">
     <a href="tabelas/tabela_abandono.php" >
         <div class="card border-0 shadow-sm rounded">
-            <div class="card-body py-4" style="background-color: #f5f5f5;">
+            <div class="card-body py-4" style="background-color: #0C2237; border-radius:5px">
                 <h5 class="mb-2 text-primary fw-bold">
                 <img src="../../direcao_escola/imagem/user (1).png" alt="Descrição do ícone" width="35"> Total de Abandono
                 </h5>
-                <p class="mb-2 text-dark fw-bold">
+                <p class="mb-2 fw-bold" style="color: #ffffff;">
                     <?= $total_abandono ?>
                 </p>
             </div>
@@ -328,11 +331,11 @@ $stmt_classe->close();
     <div class="col-12 col-md-4 mb-4">
     <a href="tabelas/tabela_gravida.php" >
         <div class="card border-0 shadow-sm rounded">
-            <div class="card-body py-4" style="background-color: #f5f5f5;">
+            <div class="card-body py-4" style="background-color: #0C2237; border-radius:5px">
                 <h5 class="mb-2 text-primary fw-bold">
                 <img src="../../direcao_escola/imagem/prenatal-care.png" alt="Descrição do ícone" width="35"> Total de Gravidez
                 </h5>
-                <p class="mb-2 text-dark fw-bold">
+                <p class="mb-2 fw-bold" style="color: #ffffff;">
                     <?= $total_gravidez ?>
                 </p>
             </div>
@@ -344,11 +347,11 @@ $stmt_classe->close();
     <div class="col-12 col-md-4 mb-4">
     <a href="tabelas/tabela_deficiente.php">
         <div class="card border-0 shadow-sm rounded">
-            <div class="card-body py-4" style="background-color: #f5f5f5;">
+            <div class="card-body py-4" style="background-color: #0C2237; border-radius:5px">
                 <h5 class="mb-2 text-primary fw-bold">
                 <img src="../../direcao_escola/imagem/wheelchair.png" alt="Descrição do ícone" width="35"> Total de Deficientes
                 </h5>
-                <p class="mb-2 text-dark fw-bold">
+                <p class="mb-2 fw-bold" style="color: #ffffff;">
                     <?= $total_deficientes ?>
                 </p>
             </div>
@@ -365,12 +368,12 @@ $stmt_classe->close();
     <div class="col-12 col-md-4 mb-4">
     <a href="tabelas/tabela_nota.php">
         <div class="card border-0 shadow-sm rounded">
-            <div class="card-body py-4" style="background-color: #f5f5f5;">
+            <div class="card-body py-4" style="background-color: #0C2237; border-radius:5px">
                 <h5 class="mb-2 text-primary fw-bold">
                 <img src="../../direcao_escola/imagem/bill.png" alt="Descrição do ícone" width="35"> Notas
                 </h5>
-                <p class="mb-2 text-dark fw-bold">
-                    Tabela Nota
+                <p class="mb-0 fw-bold" style="color: #ffffff;">
+              publicação das notas
                 </p>
             </div>
         </div>
@@ -421,25 +424,25 @@ $stmt_classe->close();
     <table class="table table-bordered table-hover table-striped">
         <thead class="bg-primary text-white">
             <tr>
-            <th scope="col"><i class="fas fa-hashtag"></i> Número</th>
-      <th scope="col"><i class="fas fa-user"></i> Nome</th>
-      <th scope="col"><i class="fas fa-venus-mars"></i> Gênero</th>
-      <th scope="col"><i class="fas fa-birthday-cake"></i> Idade</th>
-      <th scope="col"><i class="fas fa-redo-alt"></i> Repitente</th>
-      <th scope="col"><i class="fas fa-school"></i> Turma</th>
-      <th scope="col"><i class="fas fa-cogs"></i> Ação</th>
+      <th scope="col" style=" background-color: #0C2237; color:#ffffff"><i class="fas fa-hashtag"></i> Número</th>
+      <th scope="col" style=" background-color: #0C2237; color:#ffffff"><i class="fas fa-user"></i> Nome</th>
+      <th scope="col" style=" background-color: #0C2237; color:#ffffff"><i class="fas fa-venus-mars"></i> Gênero</th>
+      <th scope="col" style=" background-color: #0C2237; color:#ffffff"><i class="fas fa-birthday-cake"></i> Idade</th>
+      <th scope="col" style=" background-color: #0C2237; color:#ffffff"><i class="fas fa-redo-alt"></i> Repitente</th>
+      <th scope="col" style=" background-color: #0C2237; color:#ffffff"><i class="fas fa-school"></i> Turma</th>
+      <th scope="col" style=" background-color: #0C2237; color:#ffffff"><i class="fas fa-cogs"></i> Ação</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($alunos as $aluno): ?>
                 <tr>
-                    <th scope="row"><?= $aluno['numero_ordem'] ?></th>
-                    <td><?= $aluno['nome'] ?></td>
-                    <td><?= $aluno['genero'] ?></td>
-                    <td><?= $aluno['idade'] ?></td>
-                    <td><?= $aluno['numero_frequencia'] ?></td>
-                    <td><?= $aluno['nome_turma'] ?></td>
-                    <td>
+                    <th scope="row" style=" background-color:rgba(12, 34, 55, 0.35); color:black"><?= $aluno['numero_ordem'] ?></th>
+                    <td style=" background-color:rgba(12, 34, 55, 0.35); color:black"><?= $aluno['nome'] ?></td>
+                    <td style=" background-color:rgba(12, 34, 55, 0.35); color:black"><?= $aluno['genero'] ?></td>
+                    <td style=" background-color:rgba(12, 34, 55, 0.35); color:black"><?= $aluno['idade'] ?></td>
+                    <td style=" background-color:rgba(12, 34, 55, 0.35); color:black"><?= $aluno['numero_frequencia'] ?></td>
+                    <td style=" background-color:rgba(12, 34, 55, 0.35); color:black"><?= $aluno['nome_turma'] ?></td>
+                    <td style=" background-color:#0C2237; color:black">
                         <button 
                             class="btn btn-warning btn-sm edit-btn" 
                             data-id="<?= $aluno['id'] ?>"
@@ -458,8 +461,7 @@ $stmt_classe->close();
                             data-religiao_id="<?= $aluno['religiao_id'] ?>"
                             data-id_distrito="<?= $aluno['id_distrito'] ?>"
                         >
-                        <i class="fas fa-edit fa-lg"></i>
-
+                        <i class="fas fa-edit fa-lg"></i>editar
                         </button>
                     </td>
                 </tr>

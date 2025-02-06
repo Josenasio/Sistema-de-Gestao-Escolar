@@ -465,58 +465,58 @@ $mysqli->close();
             <!-- Turnos -->
             <div class="row g-3 mb-4">
                 <div class="col-md-3">
-                    <label for="7manha" class="form-label">Número Total de Alunos(as) da 7ª Manhã</label>
-                    <input type="text" id="7manha" name="7manha" class="form-control">
+                    <label for="7manha" class="form-label">Total de Alunos(as) da 7ª Classe <span style="color:#87CEEB; font-weight:bold; letter-spacing: 2px;">Manhã</span></label>
+                    <input type="number" id="7manha" name="7manha" class="form-control">
                 </div>
                 <div class="col-md-3">
-                    <label for="7tarde" class="form-label">Número Total de Alunos(as) da 7ª Tarde</label>
-                    <input type="text" id="7tarde" name="7tarde" class="form-control">
+                    <label for="7tarde" class="form-label">Total de Alunos(as) da 7ª Classe <span style="color:#FF8C00; font-weight:bold; letter-spacing: 2px;">Tarde</span></label>
+                    <input type="number" id="7tarde" name="7tarde" class="form-control">
                 </div>
                 <div class="col-md-3">
-                    <label for="8manha" class="form-label">Número Total de Alunos(as) da 8ª Manhã</label>
-                    <input type="text" id="8manha" name="8manha" class="form-control">
+                    <label for="8manha" class="form-label">Total de Alunos(as) da 8ª Classe <span style="color:#87CEEB; font-weight:bold; letter-spacing: 2px;">Manhã</span></label>
+                    <input type="number" id="8manha" name="8manha" class="form-control">
                 </div>
                 <div class="col-md-3">
-                    <label for="8tarde" class="form-label">Número Total de Alunos(as) da 8ª Tarde</label>
-                    <input type="text" id="8tarde" name="8tarde" class="form-control">
-                </div>
-            </div>
-
-            <div class="row g-3 mb-4">
-                <div class="col-md-3">
-                    <label for="9manha" class="form-label">Número Total de Alunos(as) da 9ª Manhã</label>
-                    <input type="text" id="9manha" name="9manha" class="form-control">
-                </div>
-                <div class="col-md-3">
-                    <label for="9tarde" class="form-label">Número Total de Alunos(as) da 9ª Tarde</label>
-                    <input type="text" id="9tarde" name="9tarde" class="form-control">
-                </div>
-                <div class="col-md-3">
-                    <label for="10manha" class="form-label">Número Total de Alunos(as) da 10ª Manhã</label>
-                    <input type="text" id="10manha" name="10manha" class="form-control">
-                </div>
-                <div class="col-md-3">
-                    <label for="10tarde" class="form-label">Número Total de Alunos(as) da 10ª Tarde</label>
-                    <input type="text" id="10tarde" name="10tarde" class="form-control">
+                    <label for="8tarde" class="form-label">Total de Alunos(as) da 8ª Classe <span style="color:#FF8C00; font-weight:bold; letter-spacing: 2px;">Tarde</span></label>
+                    <input type="number" id="8tarde" name="8tarde" class="form-control">
                 </div>
             </div>
 
             <div class="row g-3 mb-4">
                 <div class="col-md-3">
-                    <label for="11manha" class="form-label">Número Total de Alunos(as) da 11ª Manhã</label>
-                    <input type="text" id="11manha" name="11manha" class="form-control">
+                    <label for="9manha" class="form-label">Total de Alunos(as) da 9ª Classe <span style="color:#87CEEB; font-weight:bold; letter-spacing: 2px;">Manhã</span></label>
+                    <input type="number" id="9manha" name="9manha" class="form-control">
                 </div>
                 <div class="col-md-3">
-                    <label for="11tarde" class="form-label">Número Total de Alunos(as) da 11ª Tarde</label>
-                    <input type="text" id="11tarde" name="11tarde" class="form-control">
+                    <label for="9tarde" class="form-label">Total de Alunos(as) da 9ª Classe <span style="color:#FF8C00; font-weight:bold; letter-spacing: 2px;">Tarde</span></label>
+                    <input type="number" id="9tarde" name="9tarde" class="form-control">
                 </div>
                 <div class="col-md-3">
-                    <label for="12manha" class="form-label">Número Total de Alunos(as) da12ª Manhã</label>
-                    <input type="text" id="12manha" name="12manha" class="form-control">
+                    <label for="10manha" class="form-label">Total de Alunos(as) da 10ª Classe <span style="color:#87CEEB; font-weight:bold; letter-spacing: 2px;">Manhã</span></label>
+                    <input type="number" id="10manha" name="10manha" class="form-control">
                 </div>
                 <div class="col-md-3">
-                    <label for="12tarde" class="form-label">Número Total de Alunos(as) da 12ª Tarde</label>
-                    <input type="text" id="12tarde" name="12tarde" class="form-control">
+                    <label for="10tarde" class="form-label">Total de Alunos(as) da 10ª Classe <span style="color:#FF8C00; font-weight:bold; letter-spacing: 2px;">Tarde</span></label>
+                    <input type="number" id="10tarde" name="10tarde" class="form-control">
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-3">
+                    <label for="11manha" class="form-label">Total de Alunos(as) da 11ª Classe <span style="color:#87CEEB; font-weight:bold; letter-spacing: 2px;">Manhã</span></label>
+                    <input type="number" id="11manha" name="11manha" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label for="11tarde" class="form-label">Total de Alunos(as) da 11ª Classe <span style="color:#FF8C00; font-weight:bold; letter-spacing: 2px;">Tarde</span></label>
+                    <input type="number" id="11tarde" name="11tarde" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label for="12manha" class="form-label">Total de Alunos(as) da 12ª Classe <span style="color:#87CEEB; font-weight:bold; letter-spacing: 2px;">Manhã</span></label>
+                    <input type="number" id="12manha" name="12manha" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label for="12tarde" class="form-label">Total de Alunos(as) da 12ª Classe <span style="color:#FF8C00; font-weight:bold; letter-spacing: 2px;">Tarde</span></label>
+                    <input type="number" id="12tarde" name="12tarde" class="form-control">
                 </div>
             </div>
 

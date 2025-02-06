@@ -38,8 +38,6 @@ if ($result->num_rows > 0) {
         $media_nota2[] = $row['media_nota2'];
         $media_nota3[] = $row['media_nota3'];
     }
-} else {
-    echo "Nenhum resultado encontrado.";
 }
 
 $mysqli->close();

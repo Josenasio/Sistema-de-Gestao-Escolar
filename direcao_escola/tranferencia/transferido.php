@@ -128,7 +128,8 @@ $stmt->close();
                 <input type="text" name="bi" class="form-control" placeholder="Digite o BI do aluno" required>
             </div>
             <div class="col-12 col-sm-4 col-md-2">
-                <button type="submit" name="buscar_bi" class="btn btn-primary btn-block">Buscar</button>
+                <button type="submit" name="buscar_bi" class="btn btn-primary btn-block"><i class="fas fa-search"></i>
+                 Buscar</button>
             </div>
         </div>
     </form>
@@ -137,7 +138,7 @@ $stmt->close();
     <?php if (isset($aluno_selecionado)): ?>
         <div class="alert alert-success">
             Aluno encontrado: <strong><?php echo htmlspecialchars($aluno_selecionado['nome']); ?></strong>
-            <button class="btn btn-sm btn-warning ml-3" data-toggle="modal" data-target="#modalTransferir" data-id="<?php echo $aluno_selecionado['id']; ?>">Transferir</button>
+            <button class="btn btn-sm btn-warning ml-3" data-toggle="modal" data-target="#modalTransferir" data-id="<?php echo $aluno_selecionado['id']; ?>"><i class="fas fa-exchange-alt"></i> transferir</button>
         </div>
     <?php endif; ?>
 
@@ -152,10 +153,11 @@ $stmt->close();
                 <table class="table table-bordered table-responsive">
                     <thead>
                         <tr>
-                            <th>Número</th>
-                            <th>Nome</th>
-                            <th>Bilhete de Identidade</th>
-                            <th>Ações</th>
+                        <th><i class="fas fa-hashtag me-2"></i> Número</th>
+<th><i class="fas fa-user me-2"></i> Nome</th>
+<th><i class="fas fa-id-card me-2"></i> Bilhete de Identidade</th>
+<th><i class="fas fa-cogs me-2"></i> Ações</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -166,7 +168,8 @@ $stmt->close();
                                 <td><?php echo htmlspecialchars($aluno['aluno_nome']); ?></td>
                                 <td><?php echo htmlspecialchars($aluno['bilhete']); ?></td>
                                 <td>
-                                    <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalTransferir" data-id="<?php echo $aluno['aluno_id']; ?>">Transferir</button>
+                                    <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalTransferir" data-id="<?php echo $aluno['aluno_id']; ?>"><i class="fas fa-exchange-alt"></i> transferir
+                                    </button>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -209,7 +212,7 @@ $stmt->close();
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" name="transferir" class="btn btn-success">Transferir</button>
+                    <button type="submit" name="transferir" class="btn btn-success"><i class="fas fa-exchange-alt"></i> transferir</button>
                 </div>
             </form>
         </div>

@@ -60,12 +60,19 @@ $stmt_periodos = $mysqli->prepare($query_periodos);
 $stmt_periodos->execute();
 $result_periodos = $stmt_periodos->get_result();
 
-// Consultar professores
-$query_professores = "SELECT id, nome FROM usuarios WHERE tipo = 'professor' AND id_escola = ?";
-$stmt_professores = $mysqli->prepare($query_professores);
-$stmt_professores->bind_param("i", $id_escola);
-$stmt_professores->execute();
-$result_professores = $stmt_professores->get_result();
+// Consultar os diretores de turma com base no classe_id e curso_id dos alunos
+$query_diretores = "
+    SELECT DISTINCT u.id, u.nome 
+    FROM usuarios u
+    INNER JOIN aluno a ON a.classe_id = u.classe_id AND a.curso_id = u.curso_id
+    WHERE u.tipo = 'professor' AND u.id_escola = ? AND a.escola_id = ?
+";
+
+$stmt_diretores = $mysqli->prepare($query_diretores);
+$stmt_diretores->bind_param("ii", $id_escola, $id_escola);
+$stmt_diretores->execute();
+$result_diretores = $stmt_diretores->get_result();
+
 ?>
 
 <!DOCTYPE html>
@@ -118,18 +125,17 @@ $result_professores = $stmt_professores->get_result();
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Nome</th>
-                 
-                    <th>Gênero</th>
-                    <th>Idade</th>
-                    <th>Nº B.I</th>
-                    <th>Endereço</th>
-                    <th>Contacto Encarregado</th>
-                    <th>Classe</th>
-                    <th>Repitente</th>
+                <th><i class="fas fa-user me-2"></i> Nome</th>
+<th><i class="fas fa-venus-mars me-2"></i> Gênero</th>
+<th><i class="fas fa-birthday-cake me-2"></i> Idade</th>
+<th><i class="fas fa-id-card me-2"></i> Nº B.I</th>
+<th><i class="fas fa-map-marker-alt me-2"></i> Endereço</th>
+<th><i class="fas fa-phone me-2"></i> Contacto Encarregado</th>
+<th><i class="fas fa-users me-2"></i> Classe</th>
+<th><i class="fas fa-undo me-2"></i> Repetente</th>
+<th><i class="fas fa-book me-2"></i> Curso</th>
+<th><i class="fas fa-cogs me-2"></i> Ação</th>
 
-                    <th>Curso</th>
-                    <th>Ação</th>
                 </tr>
                 </tr>
             </thead>
@@ -149,61 +155,42 @@ $result_professores = $stmt_professores->get_result();
                         <td><?php echo $row['nome_area'] ?? 'Sem Curso'; ?></td>
                         <td>
                             <!-- Botão para abrir o modal -->
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdicionarTurma<?php echo $row['aluno_id']; ?>">Adicionar Turma</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdicionarTurma<?php echo $row['aluno_id']; ?>"><i class="fas fa-plus"></i> turma
+                            </button>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="modalAdicionarTurma<?php echo $row['aluno_id']; ?>" tabindex="-1" aria-labelledby="modalAdicionarTurmaLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modalAdicionarTurmaLabel">Adicionar Turma para: <?php echo $row['aluno_nome']; ?></h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="adicionar_turma.php" method="POST">
-                                                <div class="mb-3">
-                                                    <label for="turma" class="form-label">Selecione a Turma</label>
-                                                    <select class="form-select" name="turma_id" required>
-                                                        <option value="">Selecione a Turma</option>
-                                                        <?php
-                                                        // Reinicia o ponteiro do resultado das turmas
-                                                        $result_turmas->data_seek(0);
-                                                        while ($turma = $result_turmas->fetch_assoc()):
-                                                        ?>
-                                                            <option value="<?php echo $turma['id']; ?>"><?php echo $turma['nome_turma']; ?></option>
-                                                        <?php endwhile; ?>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="periodo" class="form-label">Selecione o Período/Dia</label>
-                                                    <select class="form-select" name="periodo_id" required>
-                                                        <option value="">Selecione o Período/Dia</option>
-                                                        <?php while ($periodo = $result_periodos->fetch_assoc()): ?>
-                                                            <option value="<?php echo $periodo['id']; ?>"><?php echo $periodo['descricao']; ?></option>
-                                                        <?php endwhile; ?>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="numero" class="form-label">Número de Ordem</label>
-                                                    <input type="number" class="form-control" name="numero_ordem" required>
-                                                </div>
-                                                
-                                                <div class="mb-3">
-                                                    <label for="diretor_turma" class="form-label">Selecione o Diretor de Turma</label>
-                                                    <select class="form-select" name="diretor_turma_id" required>
-                                                        <option value="">Selecione o Diretor de Turma</option>
-                                                        <?php while ($professor = $result_professores->fetch_assoc()): ?>
-                                                            <option value="<?php echo $professor['id']; ?>"><?php echo $professor['nome']; ?></option>
-                                                        <?php endwhile; ?>
-                                                    </select>
-                                                </div>
-                                                <input type="hidden" name="aluno_id" value="<?php echo $row['aluno_id']; ?>">
-                                                <button type="submit" class="btn btn-success">Adicionar Turma</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          <!-- Modal -->
+<div class="modal fade" id="modalAdicionarTurma<?php echo $row['aluno_id']; ?>" tabindex="-1" aria-labelledby="modalAdicionarTurmaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAdicionarTurmaLabel">Adicionar Turma para: <?php echo $row['aluno_nome']; ?></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="adicionar_turma.php" method="POST">
+                    <div class="mb-3">
+                        <label for="numero" class="form-label">Número de Ordem</label>
+                        <input type="number" class="form-control" name="numero_ordem" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="diretor_turma" class="form-label">Diretor(a) da Turma</label>
+                        <select class="form-select" name="diretor_turma_id" required>
+                            <option value="" selected disabled>Selecione o(a) Diretor(a) de Turma</option>
+                            <?php while ($diretor = $result_diretores->fetch_assoc()): ?>
+            <option value="<?php echo $diretor['id']; ?>">
+                <?php echo $diretor['nome']; ?>
+            </option>
+        <?php endwhile; ?>
+                        </select>
+                    </div>
+                    <input type="hidden" name="aluno_id" value="<?php echo $row['aluno_id']; ?>">
+                    <button type="submit" class="btn btn-success">Adicionar Turma</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
                         </td>
                     </tr>
                 <?php endwhile; ?>
@@ -217,5 +204,5 @@ $result_professores = $stmt_professores->get_result();
 $stmt->close();
 $stmt_turmas->close();
 $stmt_periodos->close();
-$stmt_professores->close();
+$stmt_diretores->close();
 ?>

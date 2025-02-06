@@ -201,20 +201,21 @@ margin-bottom: 50px;
         <table class="table" id='table-results'>
             <thead>
                 <tr>
-                    <th>Classe</th>
-                    <th>Turma</th>
-                    <th>Curso</th>
-                    <th>Nome</th>
-                    <th>Gênero</th>
-                    <th>Idade</th>
-                    <th>Nº Ordem</th>
-                    <th>B.I</th>
-                    <th>Nº Frequência</th>
-                    <th>Endereço</th>
-                    <th>Telefone</th>
-                    <th>S.Económica</th>
-                    <th>T.Encarregado</th>
-                    <th>Ações</th>
+                <th><i class="fas fa-users me-2"></i> Classe</th>
+<th><i class="fas fa-school me-2"></i> Turma</th>
+<th><i class="fas fa-book me-2"></i> Curso</th>
+<th><i class="fas fa-user me-2"></i> Nome</th>
+<th><i class="fas fa-venus-mars me-2"></i> Gênero</th>
+<th><i class="fas fa-birthday-cake me-2"></i> Idade</th>
+<th><i class="fas fa-list-ol me-2"></i> Nº Ordem</th>
+<th><i class="fas fa-id-card me-2"></i> B.I</th>
+<th><i class="fas fa-redo"></i> Repitente</th>
+<th><i class="fas fa-map-marker-alt me-2"></i> Endereço</th>
+<th><i class="fas fa-phone me-2"></i> Telefone</th>
+<th><i class="fas fa-wallet me-2"></i> S. Económica</th>
+<th><i class="fas fa-user-tie me-2"></i> T. Encarregado</th>
+<th><i class="fas fa-cogs me-2"></i> Ações</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -227,7 +228,8 @@ margin-bottom: 50px;
                                 </td>
                             <?php endif; ?>
                         <?php endforeach; ?>
-                        <td><button class="btn btn-success btn-sm" onclick="salvarEdicaoLinha(<?= $row['id'] ?>, this)">Atualizar</button></td>
+                        <td><button class="btn btn-success btn-sm" onclick="salvarEdicaoLinha(<?= $row['id'] ?>, this)"><i class="fas fa-sync"></i>atualizar
+                        </button></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>

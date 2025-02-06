@@ -165,14 +165,15 @@ if (isset($_POST['edit_id'])) {
             <table class="table table-bordered table-striped">
                 <thead class="table-primary">
                     <tr>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Senha</th>
-                        <th>Classe</th>
-                        <th>Curso</th>
-                        <th>Período do Dia</th>
-                        <th>Turma</th>
-                        <th>Ações</th>
+                    <th><i class="fas fa-user me-2"></i> Nome</th>
+<th><i class="fas fa-envelope me-2"></i> Email</th>
+<th><i class="fas fa-key me-2"></i> Senha</th>
+<th><i class="fas fa-users me-2"></i> Classe</th>
+<th><i class="fas fa-book me-2"></i> Curso</th>
+<th><i class="fas fa-clock me-2"></i> Período do Dia</th>
+<th><i class="fas fa-school me-2"></i> Turma</th>
+<th><i class="fas fa-cogs me-2"></i> Ações</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -186,8 +187,8 @@ if (isset($_POST['edit_id'])) {
                             <td data-label="Período do Dia"><?php echo htmlspecialchars($usuario['descricao'] ?? 'N/A'); ?></td>
                             <td data-label="Turma"><?php echo htmlspecialchars($usuario['nome_turma'] ?? 'N/A'); ?></td>
                             <td>
-                                <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" data-id="<?php echo $usuario['id']; ?>" data-nome="<?php echo htmlspecialchars($usuario['nome']); ?>" data-email="<?php echo htmlspecialchars($usuario['email']); ?>" data-classe="<?php echo htmlspecialchars($usuario['classe_id'] ?? ''); ?>" data-curso="<?php echo htmlspecialchars($usuario['curso_id'] ?? ''); ?>" data-periodo="<?php echo htmlspecialchars($usuario['periodo_dia_id'] ?? ''); ?>" data-turma="<?php echo htmlspecialchars($usuario['nome_turma'] ?? ''); ?>">Editar</button>
-                                <a href="usuarios.php?delete_id=<?php echo $usuario['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?')">Deletar</a>
+                                <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" data-id="<?php echo $usuario['id']; ?>" data-nome="<?php echo htmlspecialchars($usuario['nome']); ?>" data-email="<?php echo htmlspecialchars($usuario['email']); ?>" data-classe="<?php echo htmlspecialchars($usuario['classe_id'] ?? ''); ?>" data-curso="<?php echo htmlspecialchars($usuario['curso_id'] ?? ''); ?>" data-periodo="<?php echo htmlspecialchars($usuario['periodo_dia_id'] ?? ''); ?>" data-turma="<?php echo htmlspecialchars($usuario['nome_turma'] ?? ''); ?>"><i class="fas fa-edit fa-lg"></i>editar</button>
+                                <a href="usuarios.php?delete_id=<?php echo $usuario['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?')"><i class="fas fa-trash-alt me-2"></i>apagar</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
